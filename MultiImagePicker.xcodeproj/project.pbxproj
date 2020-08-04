@@ -139,6 +139,7 @@
 		71AAE7DF24D897E70095C003 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				71AAE7D224D895900095C003 /* AssetLoader.swift */,
 				71AAE7D024D895550095C003 /* PhotoLibraryContainer.swift */,
 			);
 			path = ViewModel;
@@ -148,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				71AAE7DA24D8965A0095C003 /* AssetGrid.swift */,
-				71AAE7D224D895900095C003 /* AssetLoader.swift */,
 				71AAE7D424D895C90095C003 /* AssetImageView.swift */,
 				71AAE7D624D8960D0095C003 /* AssetImageSelectableView.swift */,
 				71AAE7D824D8963D0095C003 /* AssetImageSelectablePreferenceKey.swift */,
