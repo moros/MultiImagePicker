@@ -40,16 +40,16 @@ struct AssetGrid: View {
                                         size: self.getImageSize(width: geometryReader.size.width),
                                         selectedIds: self.$selectedIds
                                     )
-                                        .padding(.top, Constants.cellSpacing)
-                                        .padding(.leading, Constants.cellSpacing)
+                                    .padding(.top, Constants.cellSpacing)
+                                    .padding(.leading, Constants.cellSpacing)
                                 }
                                 else {
                                     AssetImageView(
                                         asset: asset,
                                         size: self.getImageSize(width: geometryReader.size.width)
                                     )
-                                        .padding(.top, Constants.cellSpacing)
-                                        .padding(.leading, Constants.cellSpacing)
+                                    .padding(.top, Constants.cellSpacing)
+                                    .padding(.leading, Constants.cellSpacing)
                                 }
                             }
                         }

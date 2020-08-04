@@ -23,6 +23,7 @@
 		71AAE7DB24D8965A0095C003 /* AssetGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AAE7DA24D8965A0095C003 /* AssetGrid.swift */; };
 		71AAE7DD24D8968C0095C003 /* MultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AAE7DC24D8968C0095C003 /* MultiImagePicker.swift */; };
 		71AAE7E224D898E30095C003 /* MultiImagePickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AAE7E124D898E30095C003 /* MultiImagePickerSheet.swift */; };
+		71AAE7E424D9BAD30095C003 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AAE7E324D9BAD30095C003 /* LazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		71AAE7DA24D8965A0095C003 /* AssetGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetGrid.swift; sourceTree = "<group>"; };
 		71AAE7DC24D8968C0095C003 /* MultiImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImagePicker.swift; sourceTree = "<group>"; };
 		71AAE7E124D898E30095C003 /* MultiImagePickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImagePickerSheet.swift; sourceTree = "<group>"; };
+		71AAE7E324D9BAD30095C003 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				71AAE7AC24D895010095C003 /* AppDelegate.swift */,
 				71AAE7AE24D895010095C003 /* SceneDelegate.swift */,
 				71AAE7B024D895010095C003 /* ContentView.swift */,
+				71AAE7E324D9BAD30095C003 /* LazyView.swift */,
 				71AAE7B224D895030095C003 /* Assets.xcassets */,
 				71AAE7B724D895040095C003 /* LaunchScreen.storyboard */,
 				71AAE7BA24D895040095C003 /* Info.plist */,
@@ -265,6 +268,7 @@
 				71AAE7D724D8960D0095C003 /* AssetImageSelectableView.swift in Sources */,
 				71AAE7AF24D895010095C003 /* SceneDelegate.swift in Sources */,
 				71AAE7D324D895900095C003 /* AssetLoader.swift in Sources */,
+				71AAE7E424D9BAD30095C003 /* LazyView.swift in Sources */,
 				71AAE7DD24D8968C0095C003 /* MultiImagePicker.swift in Sources */,
 				71AAE7E224D898E30095C003 /* MultiImagePickerSheet.swift in Sources */,
 				71AAE7B124D895010095C003 /* ContentView.swift in Sources */,

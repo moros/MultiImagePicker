@@ -20,9 +20,11 @@ struct AssetImageView: View {
     
     var body: some View {
         VStack {
-            Image(uiImage: assetLoader.image)
-                .resizable()
-                .cornerRadius(Constants.cellRadius)
+            LazyView(
+                Image(uiImage: self.assetLoader.image)
+                    .resizable()
+                    .cornerRadius(Constants.cellRadius)
+            )
         }
         .frame(width: size.width, height: size.height)
     }
