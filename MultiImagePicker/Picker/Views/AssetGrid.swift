@@ -22,7 +22,7 @@ struct AssetGrid: View {
     
     var body: some View {
         var imageDictionary = [[PHAsset]]()
-        
+
         _ = data.publisher
             .collect(columns)
             .collect()

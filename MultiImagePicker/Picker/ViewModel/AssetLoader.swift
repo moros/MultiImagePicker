@@ -8,9 +8,11 @@
 import Combine
 import Photos
 import UIKit
+import SwiftUI
 
 class AssetLoader: ObservableObject {
     var objectWillChange = PassthroughSubject<UIImage, Never>()
+    private let imageManager = PHCachingImageManager()
     
     // FIXME: Find better solution for placeholder
     var image: UIImage = UIImage(named: "placeholder")! {
@@ -20,19 +22,17 @@ class AssetLoader: ObservableObject {
     }
     
     init(asset: PHAsset, size: CGSize) {
-        PHImageManager.default()
-            .requestImage(
-                for: asset,
-                targetSize: size,
-                contentMode: .aspectFill,
-                options: nil) { [weak self] (image, _) in
-                    // FIXME: Handle error case for better experience
-                    guard let image = image else { return }
-                    
-                    // Assign observable value from main thread
-                    DispatchQueue.main.async { [weak self] in
-                        self?.image = image
-                    }
+        
+        // Using PHCachingImageManager instead of PHImageManager reduces amount
+        // of flickering but since the entire grid is redrawn after selection
+        // there would still be a slight appearance of it.
+        self.imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: nil) { image, _ in
+            
+            // FIXME: Handle error case for better experience
+            guard let image = image else { return }
+            DispatchQueue.main.async { [weak self] in
+                self?.image = image
+            }
         }
     }
 }

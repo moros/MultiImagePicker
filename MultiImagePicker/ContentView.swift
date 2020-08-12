@@ -15,7 +15,7 @@ struct ContentView: View {
             MultiImagePicker()
                 .onPreferenceChange(AssetImageSelectablePreferenceKey.self) { imageIds in
                     print("imageIds: \(String(describing: imageIds))")
-            }
+                }
             Button(action: {
                 self.sheetPickerShown = true
             }) {

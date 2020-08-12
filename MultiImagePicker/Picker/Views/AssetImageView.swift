@@ -10,7 +10,6 @@ import SwiftUI
 
 struct AssetImageView: View {
     @ObservedObject var assetLoader: AssetLoader
-    
     var size: CGSize
     
     init (asset: PHAsset, size: CGSize) {

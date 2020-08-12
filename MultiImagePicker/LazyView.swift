@@ -3,7 +3,6 @@
 //  MultiImagePicker
 //
 //  Created by dmason on 8/4/20.
-//  Copyright © 2020 United Fire Group. All rights reserved.
 //
 
 import SwiftUI

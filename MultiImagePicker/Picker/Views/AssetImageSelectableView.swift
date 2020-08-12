@@ -41,6 +41,10 @@ struct AssetImageSelectableView: View {
                     .offset(x: offset, y: offset)
             }
         }.onTapGesture {
+            
+            // Selecting or deselecting is causing entire grid to be recreated.
+            // Perhaps we should only trigger what changed on a button press
+            // such as on like a Navigation bar item?
             if let firstIndex = self.selectedIds.firstIndex(of: self.asset.localIdentifier) {
                 self.selectedIds.remove(at: firstIndex)
             }
