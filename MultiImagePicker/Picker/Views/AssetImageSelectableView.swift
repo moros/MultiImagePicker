@@ -52,7 +52,7 @@ struct AssetImageSelectableView: View {
                 self.selectedIds.append(self.asset.localIdentifier)
             }
         }
-        .preference(key: AssetImageSelectablePreferenceKey.self, value: selectedIds)
+        .preference(key: AssetImageSelectablePreferenceKey.self, value: self.selectedIds)
         .frame(width: size.width, height: size.height)
     }
 }

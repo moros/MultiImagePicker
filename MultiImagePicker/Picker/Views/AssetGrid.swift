@@ -5,13 +5,34 @@
 //  Created by dmason on 8/3/20.
 //
 
+import Combine
 import Photos
 import SwiftUI
+
+class GridLoader: ObservableObject {
+    var objectWillChange = PassthroughSubject<[[PHAsset]], Never>()
+    @Binding var data: [PHAsset]
+    
+    var imageDictionary = [[PHAsset]]() {
+        didSet {
+            objectWillChange.send(imageDictionary)
+        }
+    }
+
+    init(columns: Int, data: Binding<[PHAsset]>) {
+        self._data = data
+        _ = self.data.publisher
+            .collect(columns)
+            .collect()
+            .sink(receiveValue: { self.imageDictionary = $0 })
+    }
+}
 
 struct AssetGrid: View {
     
     @Binding var data: [PHAsset]
     @State var columns: Int = Constants.gridColumns
+    @ObservedObject var model: GridLoader
     
     @State var selectable: Bool = false
     @State var selectedIds = [String]()
@@ -21,18 +42,12 @@ struct AssetGrid: View {
     }
     
     var body: some View {
-        var imageDictionary = [[PHAsset]]()
-
-        _ = data.publisher
-            .collect(columns)
-            .collect()
-            .sink(receiveValue: { imageDictionary = $0 })
         
         return GeometryReader { geometryReader in
             List {
-                ForEach(0..<imageDictionary.count, id: \.self) { array in
+                ForEach(0..<self.model.imageDictionary.count, id: \.self) { array in
                     HStack(spacing: 0) {
-                        ForEach(imageDictionary[array], id: \.self) { asset in
+                        ForEach(self.model.imageDictionary[array], id: \.self) { asset in
                             VStack {
                                 if self.selectable {
                                     AssetImageSelectableView(

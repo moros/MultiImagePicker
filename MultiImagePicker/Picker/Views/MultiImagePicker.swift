@@ -15,7 +15,10 @@ struct MultiImagePicker : View {
     
     var body: some View {
         VStack {
-            AssetGrid(data: self.$assets, columns: Constants.gridColumns, selectable: true)
+            AssetGrid(data: self.$assets,
+                      columns: Constants.gridColumns,
+                      model: GridLoader(columns: Constants.gridColumns, data: self.$assets),
+                      selectable: true)
         }
         .padding(5)
         .onAppear(perform: {
